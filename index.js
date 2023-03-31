@@ -8,18 +8,36 @@ const getUserChoice  = function (userInput) {
 }
 }
 
-const getComputerChoice = function(){
-  Math.floor(Math.random() * 3);
+const getUserChoice = userInput => {
+  userInput.toLowerCase();
+  if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors'  ){
+    return userInput
+  }else {
+    console.log('error')
+  }
+}
+//console.log(getUserChoice('rock'))
+
+//random num
+const getComputerChoice = () => {
+const num =Math.floor(Math.random() * 3)
+switch (num) {
+  case 0 :
+  return 'rock'
+  break;
+
+  case 1 :
+  return 'paper'
+  break;
+
+  case 2:
+  return 'scissors'
+  break 
+
+}
 }
 
-switch ( getComputerChoice) {
-  case 0:
-    return 'rock';
-    break;
-  case 1:
-    return 'paper';
-    break;
-}
+console.log(getComputerChoice())
 
 const determineWinner = function (userChoice, computerChoice ){
   if (userChoice === computerChoice) {
